@@ -5,6 +5,7 @@
 1. Install Node.js 8.6.0+
 2. Install Redis
 3. `yarn install`
+4. create `config.json` [as described](#config_json_example)
 
 ```bash
 node index.js
@@ -16,7 +17,7 @@ node index.js
 node index.js
 ```
 
-## `config.json` example
+## (#config_json_example)`config.json` example
 
 ```json
 {
