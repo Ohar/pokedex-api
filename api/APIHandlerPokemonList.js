@@ -1,15 +1,15 @@
-const POKEAPI_URL         = require('../const/POKEAPI_URL')
-const CACHE_NAME_SERVICES = require('../const/CACHE_NAME_SERVICES')
-const getDataByURL        = require('../utils/getDataByURL')
-const storeToCache        = require('../cache/storeToCache')
-const logger              = require('log4js').getLogger('APIHandlerPokemonList')
+const POKEAPI_URL             = require('../const/POKEAPI_URL')
+const CACHE_NAME_POKEMON_LIST = require('../const/CACHE_NAME_POKEMON_LIST')
+const getDataByURL            = require('../utils/getDataByURL')
+const storeToCache            = require('../cache/storeToCache')
+const logger                  = require('log4js').getLogger('APIHandlerPokemonList')
 
 function APIHandlerPokemonList (req, res) {
   logger.trace('Start')
 
   getDataByURL(POKEAPI_URL)
     .then(data => JSON.parse(data))
-    .then(storeToCache(CACHE_NAME_SERVICES))
+    .then(storeToCache(CACHE_NAME_POKEMON_LIST))
     .then(data => {
       res.setHeader('Content-Type', 'application/json; charset=utf-8')
       res.send(data)
