@@ -2,9 +2,9 @@
 
 ## Install
 
-# Install Node.js 8.6.0+
-# Install Redis
-# `yarn install`
+1. Install Node.js 8.6.0+
+2. Install Redis
+3. `yarn install`
 
 ```bash
 node index.js
