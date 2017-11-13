@@ -17,7 +17,7 @@ node index.js
 node index.js
 ```
 
-## (#config_json_example)`config.json` example
+## <a name="config_json_example"></a>`config.json` example
 
 ```json
 {
