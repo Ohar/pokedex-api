@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    "import",
+    "node",
+    "promise",
+    "react"
+  ],
+  "extends": "ohar"
+}

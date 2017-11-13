@@ -1,0 +1,39 @@
+{
+  "name": "pokedex-api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "author": "Pavel Lysenko aka Ohar <code@ohar.name>",
+  "engines": {
+    "node": ">=8.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ohar/pokedex-api.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ohar/pokedex-api/issues"
+  },
+  "homepage": "https://github.com/Ohar/pokedex-api#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "foreach-timeout": "^2.0.2",
+    "log4js": "^2.3.12",
+    "log4js-middleware": "^0.1.0",
+    "redis": "^2.8.0",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.11.0",
+    "eslint-config-ohar": "^0.0.1",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^4.0.1"
+  }
+}
