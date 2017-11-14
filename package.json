@@ -8,7 +8,8 @@
     "node": ">=8.6.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "forceupdate": "node index.js --forceupdate"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "foreach-timeout": "^2.0.2",
     "log4js": "0.6.36",
     "log4js-middleware": "^0.1.0",
+    "minimist": "^1.2.0",
     "redis": "^2.8.0",
     "request": "^2.83.0"
   },

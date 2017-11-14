@@ -2,13 +2,16 @@ const redisClient        = require('../services/redisClient')
 const loadFreshPokedex   = require('../utils/loadFreshPokedex')
 const CACHE_NAME_POKEDEX = require('../const/CACHE_NAME_POKEDEX')
 const logger             = require('log4js').getLogger('getPokedex')
+const argv               = require('minimist')(process.argv.slice(2))
+
+const forceUpdate = Boolean(argv.forceupdate)
 
 function getPokedex () {
-  logger.trace('Start')
+  logger.trace('Start, forceUpdate: ', forceUpdate)
 
   return new Promise(resolve => {
     redisClient.get(CACHE_NAME_POKEDEX, (cacheErr, data) => {
-      if (data && !cacheErr) {
+      if (!forceUpdate && data && !cacheErr) {
         logger.trace('There is some cached data')
 
         try {
