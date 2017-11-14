@@ -11,9 +11,9 @@ function getFromCache (res, next) {
         const parsed = JSON.parse(data)
 
         res.send(parsed)
-        logger.trace(`Done. Data had got to cache`)
+        logger.trace(`Done. Data had got from cache`)
       } catch (parseErr) {
-        logger.error(`Fail. Data hadn't been got to cache:`, parseErr)
+        logger.error(`Fail. Data hadn't been got from cache:`, parseErr)
         next()
       }
     } else {
