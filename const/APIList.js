@@ -5,12 +5,8 @@ const APIList = {
       description: 'Get list of available APIs',
     },
     {
-      endPoint   : '/pokemon',
+      endPoint   : '/pokedex',
       description: 'Get all pokemons',
-    },
-    {
-      endPoint   : '/pokemon/{pokemonId}',
-      description: 'Get specific pokemon',
     },
   ],
 }

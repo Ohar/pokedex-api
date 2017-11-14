@@ -1,19 +1,26 @@
-const express               = require('express')
-const {port}                = require('./config')
-const APIHandlerAPIList     = require('./api/APIHandlerAPIList')
-const APIHandlerPokemonList = require('./api/APIHandlerPokemonList')
-const cachePokemonList      = require('./middlewares/cachePokemonList')
-const logger                = require('log4js').getLogger('Server')
+const express           = require('express')
+const {port}            = require('./config')
+const APIHandlerAPIList = require('./api/APIHandlerAPIList')
+const APIHandlerPokedex = require('./api/APIHandlerPokedex')
+const cachePokedex      = require('./middlewares/cachePokedex')
+const getPokedex        = require('./utils/getPokedex')
+const logger            = require('log4js').getLogger('Server')
 
 const app = express()
 
 logger.trace('Start')
 
-app.get('/', APIHandlerAPIList)
-app.get('/pokemon', cachePokemonList, APIHandlerPokemonList)
+getPokedex()
+  .then(() => {
+    app.get('/', APIHandlerAPIList)
+    app.get('/pokedex', cachePokedex, APIHandlerPokedex)
 
-app.listen(
-  port,
-  () => {
-    logger.trace(`Listening on port ${port}`)
+    app.listen(
+      port,
+      () => {
+        logger.trace(`Pokedex is lock and loaded. Listening on port ${port}`)
+      })
+  })
+  .catch(err => {
+    logger.error('Fail, pokedex data was not loaded correcty', err)
   })
