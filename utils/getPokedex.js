@@ -8,7 +8,7 @@ const {successLogger}    = require('log4js-middleware')
 function getPokedex () {
   logger.trace('Start')
 
-  getPokemonList()
+  return getPokemonList()
     .then(getPokemonParams)
     .then(storeToCache(CACHE_NAME_POKEDEX))
     .then(successLogger(logger))
