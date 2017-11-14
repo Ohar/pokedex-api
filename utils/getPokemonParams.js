@@ -16,11 +16,8 @@ function getPokemonParams (pokemonList) {
         delete data.moves
         delete data.game_indices
         delete data.location_area_encounters
-        delete pokemon.url
 
-        pokemon.params = data
-
-        return pokemon
+        return data
       }),
     WAIT_INTERVAL_MS,
   )
