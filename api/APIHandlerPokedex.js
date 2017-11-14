@@ -1,10 +1,10 @@
-const getPokedex = require('../utils/getPokedex')
-const logger     = require('log4js').getLogger('APIHandlerPokedex')
+const loadFreshPokedex = require('../utils/loadFreshPokedex')
+const logger           = require('log4js').getLogger('APIHandlerPokedex')
 
 function APIHandlerPokedex (req, res) {
   logger.trace('Start')
 
-  getPokedex()
+  loadFreshPokedex()
     .then(data => {
       res.setHeader('Content-Type', 'application/json; charset=utf-8')
       res.send(data)
