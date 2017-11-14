@@ -1,5 +1,5 @@
-const redis  = require('redis'),
-      logger = require('log4js').getLogger('redisClient')
+const redis  = require('redis')
+const logger = require('log4js').getLogger('redisClient')
 
 const redisClient = redis.createClient()
 
