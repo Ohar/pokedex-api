@@ -16,13 +16,13 @@ node index.js
 ### Common usage
 
 ```bash
-npm start
+npm run start
 ```
 
 ### If you need to update cached data and start after
 
 ```bash
-npm forceupdate
+npm run forceupdate
 ```
 
 ## `config.json` example
