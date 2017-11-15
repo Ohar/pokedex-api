@@ -3,7 +3,7 @@ const {errorLogger, successLogger} = require('log4js-middleware')
 const getDataByURL                 = require('./getDataByURL')
 
 function loadFreshDataFromPokeapi (URL) {
-  logger.trace('Start')
+  logger.trace('Start', URL)
 
   return getDataByURL(URL)
     .then(data => JSON.parse(data))

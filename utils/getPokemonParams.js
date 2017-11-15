@@ -4,7 +4,7 @@ const foreachTimeout               = require('foreach-timeout')
 const getDataByURL                 = require('../utils/getDataByURL')
 
 function getPokemonParams (pokemonList) {
-  logger.trace('Start')
+  logger.trace('Start, ', pokemonList && pokemonList.length)
 
   const WAIT_INTERVAL_MS = 0
 
