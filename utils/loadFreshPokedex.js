@@ -1,5 +1,6 @@
 const getPokemonList     = require('../utils/getPokemonList')
 const getPokemonParams   = require('../utils/getPokemonParams')
+const filterPokemonList  = require('../utils/filterPokemonList')
 const CACHE_NAME_POKEDEX = require('../const/CACHE_NAME_POKEDEX')
 const storeToCache       = require('../cache/storeToCache')
 const logger             = require('log4js').getLogger('loadFreshPokedex')
@@ -9,7 +10,7 @@ function loadFreshPokedex () {
   logger.trace('Start')
 
   return getPokemonList()
-    .then(pokemonList => pokemonList.filter(e => e))
+    .then(filterPokemonList)
     .then(getPokemonParams)
     .then(storeToCache(CACHE_NAME_POKEDEX))
     .then(successLogger(logger))
