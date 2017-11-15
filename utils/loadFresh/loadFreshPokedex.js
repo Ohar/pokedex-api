@@ -11,8 +11,8 @@ function loadFreshPokedex () {
   logger.trace('Start')
 
   return loadFreshDataFromPokeapi(`${POKEAPI_URL}/pokemon`)
-    .then(filterPokemonList)
     .then(getPokemonParams)
+    .then(filterPokemonList)
     .then(storeToCache(CACHE_NAME_POKEDEX))
     .then(successLogger(logger))
 }
