@@ -1,5 +1,5 @@
 const express           = require('express')
-const cors           = require('cors')
+const cors              = require('cors')
 const {port}            = require('./config')
 const APIHandlerAPIList = require('./api/APIHandlerAPIList')
 const APIHandlerPokedex = require('./api/APIHandlerPokedex')
