@@ -17,6 +17,8 @@ function getPokemonParams (pokemonList) {
         delete data.game_indices
         delete data.location_area_encounters
 
+        data.types = data.types.map(type => type.type.name)
+
         return data
       }),
     WAIT_INTERVAL_MS,
