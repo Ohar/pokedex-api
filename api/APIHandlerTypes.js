@@ -1,10 +1,10 @@
-const loadFreshPokedex = require('../utils/loadFresh/loadFreshPokedex')
-const logger           = require('log4js').getLogger('APIHandlerPokedex')
+const loadFreshTypes = require('../utils/loadFresh/loadFreshTypes')
+const logger         = require('log4js').getLogger('APIHandlerTypes')
 
-function APIHandlerPokedex (req, res) {
+function APIHandlerTypes (req, res) {
   logger.trace('Start')
 
-  loadFreshPokedex()
+  loadFreshTypes()
     .then(data => {
       res.setHeader('Content-Type', 'application/json; charset=utf-8')
       res.send(data)
@@ -18,4 +18,4 @@ function APIHandlerPokedex (req, res) {
     })
 }
 
-module.exports = APIHandlerPokedex
+module.exports = APIHandlerTypes
