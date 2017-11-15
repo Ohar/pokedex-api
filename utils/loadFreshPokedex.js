@@ -9,6 +9,7 @@ function loadFreshPokedex () {
   logger.trace('Start')
 
   return getPokemonList()
+    .then(pokemonList => pokemonList.filter(e => e))
     .then(getPokemonParams)
     .then(storeToCache(CACHE_NAME_POKEDEX))
     .then(successLogger(logger))
