@@ -11,6 +11,11 @@ function loadFreshDataFromPokeapi (URL) {
       ({next, results}) => next
         ? loadFreshDataFromPokeapi(next)
                              .then(nextData => results.concat(nextData))
+                             .catch(err => { // Ignore broken API parts
+                               logger.error(`Fail, can't get %s because of:`, URL, err)
+
+                               return results
+                             })
         : results,
     )
     .then(successLogger(logger))
